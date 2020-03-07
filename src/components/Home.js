@@ -26,6 +26,12 @@ function Home(props) {
         {props.recoveredCases !== undefined &&
           props.recoveredCases.latest !== undefined &&
           props.recoveredCases.latest.toLocaleString()}
+        <br />
+        Countries:
+        {props.country !== undefined && props.country.length}
+        <br />
+        Regions:
+        {props.region !== undefined && props.region.length}
       </H3>
     </div>
   );
@@ -35,7 +41,9 @@ const mapStatetoProps = (state) => {
   return {
     confirmedCases: state.confirmedCases,
     deathCases: state.deathCases,
-    recoveredCases: state.recoveredCases
+    recoveredCases: state.recoveredCases,
+    country: state.country,
+    region: state.region
   };
 };
 

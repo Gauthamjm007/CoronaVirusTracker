@@ -6,7 +6,11 @@ import { Provider } from "react-redux";
 import { startGetConfirmedCases } from "./actions/confirmedCases";
 import { startGetDeathCases } from "./actions/deathCases";
 import { startGetRecoveredCases } from "./actions/recoveredCases";
+import { startGetRegion } from "./actions/region";
+import { startGetCountryCode } from "./actions/countryCode";
+import { startGetCountry } from "./actions/country";
 import configStore from "./store/configStore";
+
 const store = configStore();
 
 store.subscribe(() => {
@@ -16,6 +20,10 @@ store.subscribe(() => {
 store.dispatch(startGetConfirmedCases());
 store.dispatch(startGetDeathCases());
 store.dispatch(startGetRecoveredCases());
+store.dispatch(startGetRegion());
+store.dispatch(startGetCountryCode());
+store.dispatch(startGetCountry());
+
 const jsx = (
   <Provider store={store}>
     <App />
