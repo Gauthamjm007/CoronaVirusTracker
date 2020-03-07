@@ -1,9 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
+
+const H3 = styled.h3`
+  font-family: "Agency FB Bold", arial;
+  font-size: 1.2em;
+  text-align: center;
+  color: blue;
+`;
 function Home(props) {
   return (
     <div>
-      <h3>
+      <H3>
         Confirmed Cases:
         {props.confirmedCases !== undefined && props.confirmedCases.latest}
         <br />
@@ -11,7 +19,7 @@ function Home(props) {
         <br />
         Recovered Cases:
         {props.recoveredCases !== undefined && props.recoveredCases.latest}
-      </h3>
+      </H3>
     </div>
   );
 }
