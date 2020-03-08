@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import ReactCountryFlag from "react-country-flag";
 
 const H3 = styled.h3`
   font-family: "Agency FB", arial;
@@ -8,30 +10,88 @@ const H3 = styled.h3`
   text-align: center;
   color: blue;
 `;
+
+function storeLocalData(props) {
+  if (props.confirmedCases !== undefined && !localStorage.getItem("Cases")) {
+    console.log(localStorage.getItem("Cases"));
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    localStorage.setItem(
+      "Cases",
+      JSON.stringify({
+        date: dd,
+        confirmedCases: props.confirmedCases.latest,
+        deathCases: props.deathCases.latest,
+        recoveredCases: props.recoveredCases.latest
+      })
+    );
+  } else {
+    return JSON.parse(localStorage.getItem("Cases"));
+  }
+}
 function Home(props) {
+  const savedData = storeLocalData(props);
+  console.log(savedData, "datasaved");
+
+  const handleClick = (country) => {
+    console.log(country, "value");
+  };
+
   return (
-    <div>
+    <div align="center">
       <H3>
-        Confirmed Cases:
         {props.confirmedCases !== undefined &&
-          props.confirmedCases.latest !== undefined &&
-          props.confirmedCases.latest.toLocaleString()}
-        <br />
-        Death Cases:{" "}
-        {props.deathCases !== undefined &&
-          props.deathCases.latest !== undefined &&
-          props.deathCases.latest.toLocaleString()}
-        <br />
-        Recovered Cases:
-        {props.recoveredCases !== undefined &&
-          props.recoveredCases.latest !== undefined &&
-          props.recoveredCases.latest.toLocaleString()}
-        <br />
-        Countries:
-        {props.country !== undefined && props.country.length}
-        <br />
-        Regions:
-        {props.region !== undefined && props.region.length}
+        props.confirmedCases.latest !== undefined &&
+        props.deathCases.latest !== undefined &&
+        props.recoveredCases.latest !== undefined &&
+        props.deathCases !== undefined &&
+        props.countryCode !== undefined &&
+        props.region !== undefined &&
+        props.recoveredCases !== undefined &&
+        props.country !== undefined ? (
+          <>
+            Confirmed Cases:
+            {props.confirmedCases.latest.toLocaleString()}
+            <br />
+            Death Cases:
+            {props.deathCases.latest.toLocaleString()}
+            <br />
+            Recovered Cases:
+            {props.recoveredCases.latest.toLocaleString()}
+            <br />
+            Countries:
+            {props.country.length}
+            <br />
+            Regions:
+            {props.region.length}
+            <br />
+            <br />
+            Spread Across:
+            <br />
+            <div align="center">
+              {props.countryCode.map((code) => (
+                <>
+                  {"      "}
+
+                  <ReactCountryFlag
+                    className="ReactCountryFlag"
+                    onClick={() => handleClick(code)}
+                    key={code}
+                    countryCode={code}
+                    svg
+                    style={{
+                      width: "2em",
+                      height: "2em"
+                    }}
+                    title={code}
+                  />
+                </>
+              ))}
+            </div>
+          </>
+        ) : (
+          <CircularProgress></CircularProgress>
+        )}
       </H3>
     </div>
   );
@@ -43,8 +103,11 @@ const mapStatetoProps = (state) => {
     deathCases: state.deathCases,
     recoveredCases: state.recoveredCases,
     country: state.country,
-    region: state.region
+    region: state.region,
+    countryCode: state.countryCode
   };
 };
+
+connect(mapStatetoProps)(storeLocalData);
 
 export default connect(mapStatetoProps)(Home);

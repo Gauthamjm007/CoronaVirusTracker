@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Alfa+Slab+One|Oxanium&display=swap);
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ReactCountryFlag {
+  background-color: black;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.ReactCountryFlag:hover {
+  opacity: 1;
+}
+
+h1 {
+  font-family: "Oxanium", cursive;
 }

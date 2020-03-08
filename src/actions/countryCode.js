@@ -8,7 +8,7 @@ export const startGetCountryCode = () => {
         const countryCode = removeDuplicate(
           response.data.locations,
           "country_code"
-        );
+        ).filter((ele) => ele !== "XX");
         dispatch(getCountryCode(countryCode));
       })
       .catch((err) => {
