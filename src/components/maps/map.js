@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Map from "pigeon-maps";
 import Overlay from "pigeon-overlay";
+import { connect } from "react-redux";
 
 const AnyReactComponent = ({ text }) => (
   <div
@@ -8,7 +9,7 @@ const AnyReactComponent = ({ text }) => (
       height: "25px",
       width: " 25px",
       color: "white",
-      background: "green",
+      background: Number(text) > 500 ? "red" : "green",
       padding: "15px 10px",
       display: "inline-flex",
       textAlign: "center",
@@ -118,13 +119,32 @@ class PigeonMaps extends PureComponent {
           height={600}
           boxClassname="pigeon-filters"
         >
-          <Overlay anchor={[50.879, 4.6997]} offset={[120, 79]}>
-            <AnyReactComponent text={"30"}></AnyReactComponent>
-          </Overlay>
+          {this.props.confirmedCases.length !== 0 &&
+            this.props.confirmedCases.locations.map((ele) => {
+              return (
+                <Overlay
+                  anchor={[
+                    Number(ele.coordinates.lat),
+                    Number(ele.coordinates.long)
+                  ]}
+                  offset={[120, 79]}
+                >
+                  <AnyReactComponent
+                    text={String(ele.latest)}
+                  ></AnyReactComponent>
+                </Overlay>
+              );
+            })}
         </Map>
       </div>
     );
   }
 }
 
-export default PigeonMaps;
+const mapStateToProps = (state) => {
+  return {
+    confirmedCases: state.confirmedCases
+  };
+};
+
+export default connect(mapStateToProps)(PigeonMaps);

@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <VirusIcon />
       <h1>Corona Virus Tracker</h1>
-
+      <Home />
       <PigeonMaps />
     </div>
   );

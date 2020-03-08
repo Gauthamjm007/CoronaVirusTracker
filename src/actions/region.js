@@ -1,5 +1,4 @@
 import axios from "../config/Axios";
-import removeDuplicate from "../selectors/removeDuplicate";
 
 export const startGetRegion = () => {
   return (dispatch) => {
