@@ -7,6 +7,7 @@ import TableRow from "@material-ui/core/TableRow";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import TablePagination from "@material-ui/core/TablePagination";
+import { Link } from "react-router-dom";
 
 export default function TableData(props) {
   const [page, setPage] = React.useState(0);
@@ -61,13 +62,18 @@ export default function TableData(props) {
                       <TableCell align="left">{row.province}</TableCell>
                       <TableCell align="left">{row.latest}</TableCell>
                       <TableCell align="left">
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          onClick={() => handleDetail(row.province)}
+                        <Link
+                          to={`/province/${row.country}/${row.province}`}
+                          style={{ textDecoration: "none" }}
                         >
-                          view Details
-                        </Button>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => handleDetail(row.province)}
+                          >
+                            view Details
+                          </Button>
+                        </Link>
                       </TableCell>
                     </TableRow>
                   ))}

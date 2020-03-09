@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import MapDetailed from "./components/maps/mapDetailed";
 import { Link, BrowserRouter, Route } from "react-router-dom";
 import TableView from "./components/details/TableView";
+import Bar from "./components/graph/Bar";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           component={TableView}
           exact={true}
         />
+        <Route path="/province/:country/:id" component={Bar} exact={true} />
+        <Route path="/province/:country/" component={Bar} exact={true} />
         <Route path="/maps" component={MapDetailed} exact={true} />
         <Route path="/" component={Home} exact={true} />
       </BrowserRouter>
