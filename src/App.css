@@ -56,3 +56,21 @@
 h1 {
   font-family: "Oxanium", cursive;
 }
+
+.HomeIcon {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.HomeIcon:hover {
+  background-color: #aab7b8;
+}
+
+.MapIcon {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.MapIcon:hover {
+  background-color: #aab7b8;
+}

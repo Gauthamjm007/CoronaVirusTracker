@@ -17,6 +17,7 @@
     "react": "^16.13.0",
     "react-country-flag": "^2.0.1",
     "react-dom": "^16.13.0",
+    "react-feather": "^2.0.3",
     "react-google-maps": "^9.4.5",
     "react-map-gl": "^5.2.3",
     "react-redux": "^7.2.0",

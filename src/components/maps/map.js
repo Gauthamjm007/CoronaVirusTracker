@@ -1,13 +1,12 @@
 import React, { PureComponent } from "react";
 import Map from "pigeon-maps";
 import Overlay from "pigeon-overlay";
-import { connect } from "react-redux";
 
 const AnyReactComponent = ({ text }) => (
   <div
     style={{
-      height: "25px",
-      width: " 25px",
+      height: "15px",
+      width: " 15px",
       color: "white",
       background: Number(text) > 500 ? "red" : "green",
       padding: "15px 10px",
@@ -15,7 +14,7 @@ const AnyReactComponent = ({ text }) => (
       textAlign: "center",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "50%",
+      borderRadius: "50px",
       transform: "translate(-50%, -50%)"
     }}
   >
@@ -95,8 +94,14 @@ class PigeonMaps extends PureComponent {
     } = this.state;
 
     return (
-      <div style={{ maxWidth: 1200, maxHeight: 900, margin: "0 auto" }}>
-        {" "}
+      <div
+        style={{
+          maxWidth: 1200,
+          maxHeight: 900,
+          margin: "0 auto",
+          borderRadius: "5px"
+        }}
+      >
         <Map
           limitBounds="edge"
           center={center}
@@ -119,8 +124,8 @@ class PigeonMaps extends PureComponent {
           height={600}
           boxClassname="pigeon-filters"
         >
-          {this.props.confirmedCases.length !== 0 &&
-            this.props.confirmedCases.locations.map((ele, i) => {
+          {this.props.cases.length !== 0 &&
+            this.props.cases.locations.map((ele, i) => {
               return (
                 <Overlay
                   key={String(i) + ele.province}
@@ -142,10 +147,4 @@ class PigeonMaps extends PureComponent {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    confirmedCases: state.confirmedCases
-  };
-};
-
-export default connect(mapStateToProps)(PigeonMaps);
+export default PigeonMaps;
