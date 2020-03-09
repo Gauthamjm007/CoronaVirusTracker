@@ -120,9 +120,10 @@ class PigeonMaps extends PureComponent {
           boxClassname="pigeon-filters"
         >
           {this.props.confirmedCases.length !== 0 &&
-            this.props.confirmedCases.locations.map((ele) => {
+            this.props.confirmedCases.locations.map((ele, i) => {
               return (
                 <Overlay
+                  key={String(i) + ele.province}
                   anchor={[
                     Number(ele.coordinates.lat),
                     Number(ele.coordinates.long)
