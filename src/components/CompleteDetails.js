@@ -69,7 +69,7 @@ function CompleteDetails(props) {
             <br />
             Spread Across:
             <br />
-            <p>[click on map to view more]</p>
+            <p>[click on flag to view more]</p>
             <div align="center">
               {props.countryCode.map((code) => (
                 <>
