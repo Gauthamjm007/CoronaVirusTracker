@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Home as HomeIcon, Map as MapIcon } from "react-feather";
+import { Home as HomeIcon, Map as MapIcon, GitHub } from "react-feather";
 import Home from "./components/Home";
 import MapDetailed from "./components/maps/mapDetailed";
 import { Link, BrowserRouter, Route } from "react-router-dom";
@@ -18,6 +18,9 @@ function App() {
         <Link to="/maps">
           <MapIcon className="MapIcon" size="30" color="#000080" />
         </Link>
+        <a href="https://github.com/Gauthamjm007/CoronaVirusTracker">
+          <GitHub className="GitHub" size="30" color="#000080" />
+        </a>
         <Route
           path="/country/:countrycode"
           component={TableView}

@@ -32,7 +32,7 @@ class Bar extends Component {
         },
         series: [
           {
-            name: "confiremed cases",
+            name: "Confirmed Cases",
             data:
               this.props.match.params.id !== undefined
                 ? Object.values(
@@ -47,7 +47,7 @@ class Bar extends Component {
                   )
           },
           {
-            name: "death cases",
+            name: "Death Cases",
             data:
               this.props.match.params.id !== undefined
                 ? Object.values(
@@ -62,7 +62,7 @@ class Bar extends Component {
                   )
           },
           {
-            name: "recovered cases",
+            name: "Recovered Cases",
             data:
               this.props.match.params.id !== undefined
                 ? Object.values(
@@ -78,7 +78,7 @@ class Bar extends Component {
           }
         ]
       });
-    }, 2000);
+    }, 1000);
   }
 
   render() {

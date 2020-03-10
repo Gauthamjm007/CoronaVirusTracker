@@ -40,7 +40,7 @@
 }
 
 .ReactCountryFlag {
-  background-color: black;
+  background-color: #282c34;
   border: none;
   color: black;
   padding: 16px 32px;
@@ -58,8 +58,8 @@ h1 {
 }
 
 .HomeIcon {
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .HomeIcon:hover {
@@ -67,10 +67,19 @@ h1 {
 }
 
 .MapIcon {
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .MapIcon:hover {
+  background-color: #aab7b8;
+}
+
+.GitHub {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.GitHub:hover {
   background-color: #aab7b8;
 }
