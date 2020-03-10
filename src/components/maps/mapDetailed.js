@@ -21,7 +21,7 @@ function MapDetailed(props) {
         props.recoveredCases !== undefined && (
           <>
             <h1>Map</h1>
-            <p>pinch on screen to zoom in & zoom out</p>
+            <p>pinch on map to zoom in & zoom out</p>
             <Paper square>
               <Tabs
                 onChange={handleChange}

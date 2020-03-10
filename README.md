@@ -3,7 +3,7 @@ or use this link https://corona-virus-tracker-gjm.herokuapp.com/
 
 ## Corona Virus Application tracker
 
-In the project directory, you can run:
+In the run this projec tin your local repository run these commands
 
 ### `git clone https://github.com/Gauthamjm007/CoronaVirusTracker.git`
 
