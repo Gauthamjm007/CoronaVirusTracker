@@ -5,8 +5,8 @@ import Overlay from "pigeon-overlay";
 const AnyReactComponent = ({ text }) => (
   <div
     style={{
-      height: "15px",
-      width: " 15px",
+      height: Number(text) > 2000 ? `${(Number(text) / 8000) * 25}px` : "25px",
+      width: Number(text) > 2000 ? `${(Number(text) / 8000) * 25}px` : "25px",
       color: "white",
       background: Number(text) > 500 ? "red" : "green",
       padding: "15px 10px",
@@ -14,8 +14,8 @@ const AnyReactComponent = ({ text }) => (
       textAlign: "center",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "50px",
-      transform: "translate(-50%, -50%)"
+      borderRadius: "50%",
+      opacity: "70%"
     }}
   >
     {text}
@@ -44,7 +44,7 @@ class PigeonMaps extends PureComponent {
     super(props);
 
     this.state = {
-      center: [50.1102, 3.1506],
+      center: [12.9716, 77.5946],
       zoom: 6,
       provider: "osm",
       metaWheelZoom: false,
@@ -62,7 +62,7 @@ class PigeonMaps extends PureComponent {
 
   handleBoundsChange = ({ center, zoom, bounds, initial }) => {
     if (initial) {
-      console.log("Got initial bounds: ", bounds);
+      //  console.log("Got initial bounds: ", bounds);
     }
     this.setState({ center, zoom });
   };

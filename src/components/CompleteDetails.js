@@ -14,7 +14,7 @@ const H3 = styled.h3`
 
 function storeLocalData(props) {
   if (props.confirmedCases !== undefined && !localStorage.getItem("Cases")) {
-    console.log(localStorage.getItem("Cases"));
+    //console.log(localStorage.getItem("Cases"));
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
     localStorage.setItem(
@@ -31,11 +31,8 @@ function storeLocalData(props) {
   }
 }
 function CompleteDetails(props) {
-  const savedData = storeLocalData(props);
-  console.log(savedData, "datasaved");
-
   const handleClick = (country) => {
-    console.log(country, "value");
+    //  console.log(country, "value");
   };
 
   return (
@@ -71,13 +68,12 @@ function CompleteDetails(props) {
             <br />
             <p>[click on a flag to view more]</p>
             <div align="center">
-              {props.countryCode.map((code) => (
-                <>
+              {props.countryCode.map((code, i) => (
+                <React.Fragment key={code + i}>
                   <Link to={`/country/${code}`}>
                     <ReactCountryFlag
                       className="ReactCountryFlag"
                       onClick={() => handleClick(code)}
-                      key={code}
                       countryCode={code}
                       svg
                       style={{
@@ -87,7 +83,7 @@ function CompleteDetails(props) {
                       title={code}
                     />
                   </Link>
-                </>
+                </React.Fragment>
               ))}
             </div>
           </>

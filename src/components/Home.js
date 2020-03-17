@@ -4,8 +4,11 @@ import VirusIcon from "../components/icons/virus-icon";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Corona Virus Tracker</h1>
+    <div align="right">
+      <span>
+        <h1 align="center">Corona Virus Live Tracker</h1>
+      </span>
+
       <VirusIcon />
       <CompleteDetails />
     </div>

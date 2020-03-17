@@ -22,7 +22,7 @@ export default function TableData(props) {
   };
 
   const handleDetail = (province) => {
-    console.log(province);
+    //  console.log(province);
   };
 
   return (

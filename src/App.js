@@ -21,6 +21,7 @@ function App() {
         <a href="https://github.com/Gauthamjm007/CoronaVirusTracker">
           <GitHub className="GitHub" size="30" color="#000080" />
         </a>
+
         <Route
           path="/country/:countrycode"
           component={TableView}

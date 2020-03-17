@@ -83,3 +83,40 @@ h1 {
 .GitHub:hover {
   background-color: #aab7b8;
 }
+
+.pulse {
+  margin: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #749a02;
+  border-radius: 5px;
+}
+@-webkit-keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes greenPulse {
+  from {
+    background-color: #749a02;
+    -webkit-box-shadow: 0 0 9px #333;
+  }
+  50% {
+    background-color: #91bd09;
+    -webkit-box-shadow: 0 0 18px #91bd09;
+  }
+  to {
+    background-color: #749a02;
+    -webkit-box-shadow: 0 0 9px #333;
+  }
+}

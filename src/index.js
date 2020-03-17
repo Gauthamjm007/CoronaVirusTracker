@@ -13,10 +13,6 @@ import configStore from "./store/configStore";
 
 const store = configStore();
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
-
 store.dispatch(startGetConfirmedCases());
 store.dispatch(startGetDeathCases());
 store.dispatch(startGetRecoveredCases());

@@ -12,7 +12,6 @@ function TableView(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    console.log(value);
   };
   return (
     <div align="center">
