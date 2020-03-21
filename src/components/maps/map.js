@@ -135,9 +135,13 @@ class PigeonMaps extends PureComponent {
                   ]}
                   offset={[120, 79]}
                 >
-                  <AnyReactComponent
-                    text={String(ele.latest)}
-                  ></AnyReactComponent>
+                  {ele.latest !== 0 ? (
+                    <AnyReactComponent
+                      text={String(ele.latest)}
+                    ></AnyReactComponent>
+                  ) : (
+                    <p></p>
+                  )}
                 </Overlay>
               );
             })}
