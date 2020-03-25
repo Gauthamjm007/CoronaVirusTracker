@@ -60,8 +60,19 @@ function CompleteDetails(props) {
             Countries:
             {props.country.length}
             <br />
-            Regions:
-            {props.region.length}
+            Recovery Rate:
+            {(
+              (props.recoveredCases.latest / props.confirmedCases.latest) *
+              100
+            ).toFixed(2)}
+            %
+            <br />
+            Death Rate:
+            {(
+              (props.deathCases.latest / props.confirmedCases.latest) *
+              100
+            ).toFixed(2)}
+            %
             <br />
             <br />
             Spread Across:

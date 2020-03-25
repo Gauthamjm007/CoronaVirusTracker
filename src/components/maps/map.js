@@ -5,8 +5,8 @@ import Overlay from "pigeon-overlay";
 const AnyReactComponent = ({ text }) => (
   <div
     style={{
-      height: `${Math.round(Math.log(Number(text)) / Math.log(50)) * 25}px`,
-      width: `${Math.round(Math.log(Number(text)) / Math.log(50)) * 25}px`,
+      height: `${Math.round(Math.log(Number(text)) / Math.log(50)) * 15}px`,
+      width: `${Math.round(Math.log(Number(text)) / Math.log(50)) * 15}px`,
       color: "white",
       background: Number(text) > 500 ? "red" : "green",
       padding: "15px 10px",

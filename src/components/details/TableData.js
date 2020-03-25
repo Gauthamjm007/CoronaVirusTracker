@@ -44,7 +44,7 @@ export default function TableData(props) {
                   <b>Province</b>
                 </TableCell>
                 <TableCell align="left">
-                  <b>Number</b>
+                  <b>Cases</b>
                 </TableCell>
                 <TableCell align="left">
                   <b>Details</b>
@@ -59,7 +59,9 @@ export default function TableData(props) {
                     <TableRow key={row.province}>
                       <TableCell align="left">{i + 1}</TableCell>
                       <TableCell align="left">{row.country}</TableCell>
-                      <TableCell align="left">{row.province}</TableCell>
+                      <TableCell align="left">
+                        {row.province ? row.province : "NA"}
+                      </TableCell>
                       <TableCell align="left">{row.latest}</TableCell>
                       <TableCell align="left">
                         <Link
