@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@turf/random": "^6.0.2",
     "apexcharts": "^3.16.1",
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "dotenv": "^8.2.0",
     "immutable": "^4.0.0-rc.12",
     "pigeon-maps": "^0.15.0",
